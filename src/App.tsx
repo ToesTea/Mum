@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const api_url = "https://zenquotes.io/api/today/";
+const api_url = "/.netlify/functions/quote";
 
 function App() {
   const [visible, setVisible] = useState(false);
@@ -19,7 +19,6 @@ function App() {
         const response = await fetch(api_url);
         const data = await response.json();
 
-        // API returns an array
         setQuote(data[0]?.q + " — " + data[0]?.a);
       } catch (err) {
         console.error("Failed to fetch quote:", err);

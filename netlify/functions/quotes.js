@@ -1,4 +1,4 @@
-export async function handler() {
+exports.handler = async () => {
   try {
     const res = await fetch("https://zenquotes.io/api/today/");
     const data = await res.json();
@@ -10,7 +10,7 @@ export async function handler() {
   } catch (err) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Failed to fetch quote" }),
+      body: JSON.stringify({ error: "failed" }),
     };
   }
-}
+};
