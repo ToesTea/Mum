@@ -37,7 +37,7 @@ function App() {
           visible ? "opacity-100" : "opacity-0"
         }`}
       >
-       <GetRandomHeadline /> 
+        <GetRandomHeadline /> 
       </div>
 
       <div>
