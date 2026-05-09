@@ -29,21 +29,33 @@ function App() {
     fetchQuote();
   }, []);
 
-  return (
+ return (
     <>
+      {/* Headline */}
       <div
-        className={`text-5xl mt-10 text-center font-[myHeadline] text-[#7A2E3A] tracking-wide drop-shadow transition-opacity duration-700 ease-out ${
-          visible ? "opacity-100" : "opacity-0"
+        className={`text-5xl mt-10 text-center font-[myHeadline] text-[#7A2E3A] tracking-wide drop-shadow transition-all duration-700 ease-out ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
         }`}
       >
-        <GetRandomHeadline /> 
+        <GetRandomHeadline />
       </div>
 
-      <div>
-        {quote || "Loading..."}
+      {/* Quote container */}
+      <div className="flex justify-center mt-16 px-4">
+        <div
+          className={`relative max-w-2xl text-center font-[myQuotes] text-[#7A2E3A] italic text-2xl md:text-3xl tracking-wide bg-[#f5e6e8] border border-[#7A2E3A]/30 rounded-3xl p-10 shadow-lg transition-all duration-700 ease-out ${
+            visible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
+        >
+          {/* decorative quote marks */}
+          <div className="absolute top-3 left-5 text-6xl opacity-10">“</div>
+          <div className="absolute -bottom-4 right-5 text-6xl opacity-10">”</div>
+
+          {quote || "Loading..."}
+        </div>
       </div>
     </>
-  );
+  ); 
 }
 
 function GetRandomHeadline() {
