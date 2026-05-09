@@ -10,6 +10,70 @@
     src: url(./assets/quote.ttf);
 }
 
-html, body {
-    background-color: #FFCCD5;
+html, body, #root {
+  min-height: 100%;
 }
+
+body {
+  margin: 0;
+  background-color: #FFCCD5;
+}
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+@keyframes gradientPulse {
+  0% {
+    transform: scale(1);
+    background-position: 18% 22%, 78% 72%, 0% 50%;
+  }
+  50% {
+    transform: scale(1.12);
+    background-position: 30% 18%, 66% 78%, 100% 50%;
+  }
+  100% {
+    transform: scale(1);
+    background-position: 18% 22%, 78% 72%, 0% 50%;
+  }
+}
+
+.ambient-gradient {
+  transform-origin: center;
+  opacity: 0.25;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.35), transparent 45%),
+              radial-gradient(circle at 75% 70%, rgba(245, 188, 200, 0.45), transparent 50%),
+              linear-gradient(130deg, rgba(255, 255, 255, 0.2), rgba(245, 210, 219, 0.22), rgba(255, 255, 255, 0.18));
+  background-size: 140% 140%, 150% 150%, 220% 220%;
+  background-repeat: no-repeat;
+  animation: gradientPulse 28s ease-in-out infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradientMove {
+  background-size: 200% 200%;
+  animation: gradientMove 3s ease infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+

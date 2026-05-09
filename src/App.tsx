@@ -30,15 +30,23 @@ function App() {
   }, []);
 
  return (
-    <>
+    <div className="relative min-h-screen overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 z-0 ambient-gradient" />
+
+      <div className="relative z-10">
+
       {/* Headline */}
-      <div
-        className={`text-5xl mt-10 text-center font-[myHeadline] text-[#7A2E3A] tracking-wide drop-shadow transition-all duration-700 ease-out ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
-        }`}
-      >
+     <div
+      className={`relative text-5xl mt-50 text-center font-[myHeadline] tracking-wide drop-shadow transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"
+      }`}
+    >
+
+      {/* main text with float */}
+      <span className="relative inline-block text-[#7A2E3A] animate-float drop-shadow-2xl">
         <GetRandomHeadline />
-      </div>
+      </span>
+    </div>
 
       {/* Quote container */}
       <div className="flex justify-center mt-16 px-4">
@@ -54,7 +62,8 @@ function App() {
           {quote || "Loading..."}
         </div>
       </div>
-    </>
+      </div>
+    </div>
   ); 
 }
 
