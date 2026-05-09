@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: myHeadline;
+    src: url(./assets/headline.ttf);
+}
+
+@font-face {
+    font-family: myQuote;
+    src: url(./assets/quote.ttf);
+}
+
+html, body {
+    background-color: #FFCCD5;
+}
